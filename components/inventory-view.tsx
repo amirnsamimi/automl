@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useFilter, type FilterDimensions } from "@/hooks/use-filter";
 import { faDigits } from "@/lib/format";
-import { activeFilterCount, filtersHref, queryKey, toggleValue, type FilterErrors, type Filters } from "@/lib/filters";
+import { activeFilterCount, DEFAULT_SORT, filtersHref, queryKey, toggleValue, type FilterErrors, type Filters } from "@/lib/filters";
 import { SORT_OPTIONS } from "@/lib/labels";
 import type { BrandOption, CarListResult } from "@/lib/types";
 import { CarList } from "./car-list";
@@ -99,7 +99,7 @@ export function InventoryView({ filters, brands, result, errors, canonicalHref }
           <button type="button" className="pill-ghost whitespace-nowrap lg:min-w-64" onClick={() => setSortOpen(true)} aria-haspopup="dialog">
             <SortIcon size={18} />
             <span>
-              <span className="sr-only sm:not-sr-only">مرتب‌سازی: </span>
+              {filters.sort !== DEFAULT_SORT && <span className="sr-only sm:not-sr-only">مرتب‌سازی: </span>}
               {sortLabel}
             </span>
           </button>

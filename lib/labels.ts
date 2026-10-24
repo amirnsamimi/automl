@@ -86,7 +86,7 @@ export const BODY_TYPE_LABELS: Record<BodyType, string> = {
 };
 
 export const SORT_OPTIONS = [
-  { value: "newest", label: "جدیدترین" },
+  { value: "newest", label: "بدون مرتب‌سازی" },
   { value: "price_asc", label: "ارزان‌ترین" },
   { value: "price_desc", label: "گران‌ترین" },
   { value: "mileage_asc", label: "کم‌کارکردترین" },
