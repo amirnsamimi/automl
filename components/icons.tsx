@@ -29,6 +29,12 @@ export const SearchIcon = (p: IconProps) => (
   </Icon>
 );
 
+export const BoltIcon = (p: IconProps) => (
+  <Icon fill="currentColor" stroke="none" {...p}>
+    <path d="M13.5 2 4.5 13.5h6L9.5 22l9-11.5h-6z" />
+  </Icon>
+);
+
 export const FilterIcon = (p: IconProps) => (
   <Icon {...p}>
     <path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0" />

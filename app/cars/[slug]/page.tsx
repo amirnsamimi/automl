@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { ConditionBadge, PaymentBadges, StatusBadge } from "@/components/badges";
+import { ConditionBadge, EvBadge, PaymentBadges, StatusBadge } from "@/components/badges";
 import { CarGallery } from "@/components/car-gallery";
 import { CompareButton } from "@/components/compare-toggle";
 import { CompareTray } from "@/components/compare-tray";
@@ -92,6 +92,7 @@ async function CarDetailView({ params }: Pick<PageProps<"/cars/[slug]">, "params
           </div>
           <div className="flex flex-wrap gap-2">
             <ConditionBadge condition={car.condition} />
+            <EvBadge fuelType={car.fuelType} />
             <StatusBadge status={car.status} />
           </div>
         </div>

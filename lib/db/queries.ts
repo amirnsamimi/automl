@@ -32,6 +32,7 @@ const summaryColumns = {
   status: cars.status,
   cityFa: cars.cityFa,
   transmission: carSpecs.transmission,
+  fuelType: carSpecs.fuelType,
 };
 
 const imageColumns = {

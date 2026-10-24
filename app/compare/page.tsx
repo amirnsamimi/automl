@@ -68,6 +68,7 @@ async function CompareContent({ searchParams }: Pick<PageProps<"/compare">, "sea
     color: c.colorLabelFa,
     status: STATUS_LABELS[c.status],
     available: c.status === "available",
+    fuelType: c.fuelType,
     image: c.mainImage ? { src: c.mainImage.src, alt: c.mainImage.alt } : null,
   }));
 

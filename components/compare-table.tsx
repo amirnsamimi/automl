@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import type { CompareRow } from "@/lib/compare";
 import { faDigits, formatYear } from "@/lib/format";
+import type { FuelType } from "@/db/schema";
+import { EvBadge } from "./badges";
 import { MAX_COMPARE, setCompareIds } from "./compare-store";
 import { CloseIcon } from "./icons";
 
@@ -21,6 +23,7 @@ export type CompareCarHeader = {
   color: string;
   status: string;
   available: boolean;
+  fuelType: FuelType | null;
   image: { src: string; alt: string } | null;
 };
 
@@ -109,6 +112,7 @@ export function CompareTable({ cars, rows }: { cars: CompareCarHeader[]; rows: C
                       <p className="meta">
                         {formatYear(car.year)} · {car.color}
                       </p>
+                      <EvBadge fuelType={car.fuelType} className="self-start" />
                       {!car.available && <p className="rounded-full bg-warning px-2 py-0.5 text-xs text-warning-ink">{car.status}</p>}
                     </div>
                   </th>

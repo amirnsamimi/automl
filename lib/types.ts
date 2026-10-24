@@ -64,6 +64,7 @@ export type CarSummary = {
   status: CarStatus;
   cityFa: string;
   transmission: Transmission | null;
+  fuelType: FuelType | null;
   mainImage: PublicImage | null;
   paymentMethods: PaymentMethod[];
 };

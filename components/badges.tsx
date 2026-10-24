@@ -1,5 +1,6 @@
-import type { BodyCondition, CarStatus, PaymentMethod } from "@/db/schema";
+import type { BodyCondition, CarStatus, FuelType, PaymentMethod } from "@/db/schema";
 import { CONDITION_LABELS, CONDITION_TONE, PAYMENT_LABELS, STATUS_LABELS } from "@/lib/labels";
+import { BoltIcon } from "./icons";
 
 const TONE_CLASS = {
   good: "bg-mint text-green",
@@ -22,6 +23,19 @@ export function ConditionBadge({ condition, className = "" }: { condition: BodyC
       <span aria-hidden="true" className={`size-1.5 rounded-full ${TONE_DOT[tone]}`} />
       <span className="sr-only">وضعیت بدنه: </span>
       {CONDITION_LABELS[condition]}
+    </span>
+  );
+}
+
+export function EvBadge({ fuelType, className = "" }: { fuelType: FuelType | null; className?: string }) {
+  if (fuelType !== "electric") return null;
+  return (
+    <span className={`inline-flex items-center gap-1 rounded-full bg-ev px-2.5 py-1 text-xs font-bold text-ev-ink ${className}`}>
+      <BoltIcon size={13} />
+      <bdi dir="ltr" aria-hidden="true">
+        EV
+      </bdi>
+      <span className="sr-only">خودروی برقی</span>
     </span>
   );
 }

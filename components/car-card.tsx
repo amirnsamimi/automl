@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { CarSummary } from "@/lib/types";
 import { formatKm, formatMillionToman, formatYear } from "@/lib/format";
 import { TRANSMISSION_LABELS } from "@/lib/labels";
-import { ConditionBadge, PaymentBadges } from "./badges";
+import { ConditionBadge, EvBadge, PaymentBadges } from "./badges";
 import { CompareToggle } from "./compare-toggle";
 
 export function CarCard({ car, priority = false }: { car: CarSummary; priority?: boolean }) {
@@ -37,8 +37,9 @@ export function CarCard({ car, priority = false }: { car: CarSummary; priority?:
         )}
       </div>
 
-      <div>
+      <div className="flex flex-wrap gap-1.5">
         <ConditionBadge condition={car.condition} />
+        <EvBadge fuelType={car.fuelType} />
       </div>
 
       <div className="flex flex-col gap-1">
