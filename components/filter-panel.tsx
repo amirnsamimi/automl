@@ -6,11 +6,13 @@ import { faDigits, faInt, normalizeDigits } from "@/lib/format";
 import { filtersHref, parseFilters, toggleValue, type FilterErrors } from "@/lib/filters";
 import { BODY_CONDITIONS, CONDITION_LABELS, PAYMENT_LABELS, PAYMENT_METHODS } from "@/lib/labels";
 import type { BrandOption } from "@/lib/types";
+import { Dropdown, type DropdownOption } from "./dropdown";
 import { CheckIcon } from "./icons";
 
 export const PRICE_SLIDER_MAX = 15_000;
 const PRICE_STEP = 50;
 const YEARS = Array.from({ length: 1405 - 1390 + 1 }, (_, i) => 1405 - i);
+const YEAR_OPTIONS: DropdownOption[] = [{ value: "", label: "همه" }, ...YEARS.map((y) => ({ value: String(y), label: faDigits(y) }))];
 
 type Draft = {
   brand: string[];
@@ -294,27 +296,7 @@ function YearSelect({
   onChange: (v: string) => void;
   invalid: boolean;
 }) {
-  return (
-    <div className="relative">
-      <label htmlFor={id} className="pointer-events-none absolute start-4 top-1/2 -translate-y-1/2 text-muted">
-        {label}
-      </label>
-      <select
-        id={id}
-        className="field h-14 appearance-none ps-12"
-        aria-invalid={invalid || undefined}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      >
-        <option value="">همه</option>
-        {YEARS.map((y) => (
-          <option key={y} value={y}>
-            {faDigits(y)}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  return <Dropdown id={id} label={label} name={`سال ساخت ${label}`} value={value} options={YEAR_OPTIONS} onChange={onChange} invalid={invalid} />;
 }
 
 function FieldError({ children }: { children: React.ReactNode }) {

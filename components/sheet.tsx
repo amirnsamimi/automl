@@ -41,7 +41,7 @@ export function Sheet({ open, onClose, title, children, footer, size = "md" }: S
     });
 
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === "Escape" && !e.defaultPrevented) {
         e.preventDefault();
         onCloseRef.current();
       }
