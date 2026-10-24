@@ -40,6 +40,14 @@ export function useFilter(filters: Filters) {
     [filters, go],
   );
 
+  const search = useCallback(
+    (q: string, history: "push" | "replace") => {
+      clearListModes();
+      go({ ...filters, q: q || undefined, page: 1, limit: DEFAULT_LIMIT }, history);
+    },
+    [filters, go],
+  );
+
   const setSort = useCallback(
     (sort: Sort) => {
       clearListModes();
@@ -71,5 +79,5 @@ export function useFilter(filters: Filters) {
     go({ sort: filters.sort, page: 1, limit: DEFAULT_LIMIT });
   }, [filters.sort, go]);
 
-  return { filters, isPending, apply, update, setSort, goToPage, setLimit, reset, replace: (f: Filters) => go(f, "replace") };
+  return { filters, isPending, apply, update, search, setSort, goToPage, setLimit, reset, replace: (f: Filters) => go(f, "replace") };
 }

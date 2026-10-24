@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useDebouncedCallback } from "@/hooks/use-debounced-callback";
 import { useFilter, type FilterDimensions } from "@/hooks/use-filter";
 import { faDigits } from "@/lib/format";
 import { activeFilterCount, DEFAULT_SORT, filtersHref, queryKey, toggleValue, type FilterErrors, type Filters } from "@/lib/filters";
@@ -54,7 +55,7 @@ export function InventoryView({ filters, brands, result, errors, canonicalHref }
       </aside>
 
       <section aria-labelledby="results-heading" className="flex min-w-0 flex-col gap-5">
-        <SearchBox key={filters.q ?? ""} initial={filters.q ?? ""} onSearch={(q) => nav.update({ q: q || undefined })} />
+        <SearchBox applied={filters.q ?? ""} onSearch={nav.search} />
 
         <div role="group" aria-label="برند" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 lg:hidden">
           <button type="button" role="checkbox" aria-checked={!filters.brand?.length} className="chip" onClick={() => nav.update({ brand: undefined })}>
@@ -153,15 +154,42 @@ export function InventoryView({ filters, brands, result, errors, canonicalHref }
   );
 }
 
-function SearchBox({ initial, onSearch }: { initial: string; onSearch: (q: string) => void }) {
-  const [value, setValue] = useState(initial);
+const SEARCH_DEBOUNCE_MS = 350;
+const SEARCH_THROTTLE_MS = 800;
+
+function SearchBox({ applied, onSearch }: { applied: string; onSearch: (q: string, history: "push" | "replace") => void }) {
+  const [value, setValue] = useState(applied);
+  const [focused, setFocused] = useState(false);
+  const [sent, setSent] = useState(applied);
+  const [prevApplied, setPrevApplied] = useState(applied);
+  const [session, setSession] = useState(false);
+
+  // Navigation that did not come from this box (reset, back button) replaces the text, but never mid-typing.
+  if (applied !== prevApplied) {
+    setPrevApplied(applied);
+    if (applied !== sent && !focused) {
+      setValue(applied);
+      setSent(applied);
+    }
+  }
+
+  const submit = (q: string, forcePush = false) => {
+    if (q === sent) return;
+    setSent(q);
+    onSearch(q, forcePush || !session ? "push" : "replace");
+    setSession(true);
+  };
+  const debounced = useDebouncedCallback(submit, { wait: SEARCH_DEBOUNCE_MS, maxWait: SEARCH_THROTTLE_MS });
+
   return (
     <form
       role="search"
       className="relative"
       onSubmit={(e) => {
         e.preventDefault();
-        onSearch(value.trim());
+        debounced.cancel();
+        submit(value.trim(), true);
+        setSession(false);
       }}
     >
       <label htmlFor="inventory-search" className="sr-only">
@@ -176,7 +204,15 @@ function SearchBox({ initial, onSearch }: { initial: string; onSearch: (q: strin
         className="tap h-14 w-full rounded-full border border-border bg-surface pe-5 ps-14 text-base placeholder:text-muted focus:border-green focus:outline-none"
         placeholder="جستجوی برند یا مدل"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          setValue(e.target.value);
+          debounced.call(e.target.value.trim());
+        }}
+        onFocus={() => setFocused(true)}
+        onBlur={() => {
+          setFocused(false);
+          setSession(false);
+        }}
       />
     </form>
   );
