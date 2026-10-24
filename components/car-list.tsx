@@ -128,20 +128,6 @@ export function CarList({ result, filters, queryKey, pending, onPage, onLimit, o
         </div>
       )}
 
-      {appendedBoundary && shownTo < result.total && (
-        <div className="rounded-card bg-mint p-6">
-          <p className="text-xl font-black">{faDigits(shownTo)} خودرو را دیدید</p>
-          <p className="mt-2 text-sm text-muted">برای ادامه، صفحه بعد را انتخاب کنید.</p>
-          <button
-            type="button"
-            className="tap mt-2 text-sm font-bold text-green underline-offset-4 hover:underline"
-            onClick={() => onPage(3, queryKey)}
-          >
-            ادامه با صفحه‌بندی
-          </button>
-        </div>
-      )}
-
       {autoMode && shownTo >= result.total && (!result.hasNext || appendedBoundary) && (
         <p className="meta text-center">همه {faDigits(result.total)} خودرو نمایش داده شد.</p>
       )}
