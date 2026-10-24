@@ -17,8 +17,8 @@ export function CarCard({ car, priority = false }: { car: CarSummary; priority?:
           <bdi dir="ltr">{formatKm(car.mileageKm)} KM</bdi>
         </p>
         <p className="text-muted">
-          <span className="sr-only">سال ساخت: </span>
-          {formatYear(car.productionYearJalali)} <span aria-hidden="true">ساخت</span>
+          <span className="sr-only">سال </span>
+          ساخت <bdi>{formatYear(car.productionYearJalali)}</bdi>
         </p>
       </div>
 
