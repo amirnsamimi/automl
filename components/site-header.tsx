@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LogoMark } from "./logo";
 import { NAV_ITEMS, isActive } from "./nav-items";
 
 export function SiteHeader() {
@@ -10,11 +11,14 @@ export function SiteHeader() {
   return (
     <header className="border-b border-border bg-surface/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 lg:h-20 lg:px-8">
-        <Link href="/cars" className="flex flex-col leading-tight" aria-label="Auto ML، صفحه خودروها">
-          <bdi dir="ltr" className="text-2xl font-black tracking-tight lg:text-3xl">
-            Auto ML
-          </bdi>
-          <span className="text-[11px] text-muted lg:hidden">نمایشگاه خودروهای منتخب</span>
+        <Link href="/cars" className="flex items-center gap-3" aria-label="Auto ML، صفحه خودروها">
+          <LogoMark className="size-10 shrink-0 text-ink lg:size-12" />
+          <span className="flex flex-col leading-tight">
+            <bdi dir="ltr" className="text-2xl font-black tracking-tight lg:text-3xl">
+              Auto ML
+            </bdi>
+            <span className="text-[11px] text-muted lg:hidden">نمایشگاه خودروهای منتخب</span>
+          </span>
         </Link>
 
         <nav aria-label="ناوبری اصلی" className="hidden flex-1 lg:block">
