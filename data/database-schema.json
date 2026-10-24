@@ -1,0 +1,773 @@
+{
+  "title": "Auto ML — PostgreSQL / Drizzle design specification",
+  "format": "Non-executable logical schema; no SQL migration or TypeScript code is included.",
+  "database": "PostgreSQL on Neon",
+  "future_orm": "Drizzle",
+  "schema_version": 1,
+  "enums": {
+    "car_status": [
+      "available",
+      "reserved",
+      "sold",
+      "archived"
+    ],
+    "body_condition": [
+      "original_paint",
+      "repainted_panel",
+      "repainted",
+      "accident_damage",
+      "unknown"
+    ],
+    "payment_method": [
+      "cash",
+      "installment",
+      "trade_in"
+    ],
+    "fuel_type": [
+      "petrol",
+      "diesel",
+      "hybrid",
+      "plugin_hybrid",
+      "electric",
+      "other"
+    ],
+    "transmission": [
+      "manual",
+      "automatic",
+      "cvt",
+      "dual_clutch",
+      "single_speed",
+      "unknown"
+    ],
+    "drivetrain": [
+      "fwd",
+      "rwd",
+      "awd",
+      "four_wd",
+      "unknown"
+    ],
+    "body_type": [
+      "sedan",
+      "hatchback",
+      "suv",
+      "crossover",
+      "coupe",
+      "wagon",
+      "van",
+      "pickup",
+      "other"
+    ],
+    "feature_availability": [
+      "present",
+      "absent",
+      "unknown"
+    ],
+    "image_role": [
+      "main",
+      "lifestyle",
+      "front",
+      "rear",
+      "interior",
+      "detail",
+      "inspection"
+    ]
+  },
+  "tables": {
+    "owners": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": true
+        },
+        "display_name": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": true
+        },
+        "legal_name": {
+          "postgres_type": "varchar(200)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": true
+        },
+        "email": {
+          "postgres_type": "varchar(254)",
+          "nullable": true,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": true
+        },
+        "phone": {
+          "postgres_type": "varchar(32)",
+          "nullable": true,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": true
+        },
+        "public_contact_label": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": true
+        },
+        "created_at": {
+          "postgres_type": "timestamptz",
+          "nullable": false,
+          "drizzle_mapping": "timestamp / withTimezone true / date mode",
+          "private": true
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "foreign_keys": []
+    },
+    "brands": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "slug": {
+          "postgres_type": "varchar(100)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "name_en": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "name_fa": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "slug"
+        ],
+        [
+          "name_fa"
+        ]
+      ],
+      "foreign_keys": []
+    },
+    "models": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "brand_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "slug": {
+          "postgres_type": "varchar(180)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "name_en": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "name_fa": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "slug"
+        ],
+        [
+          "brand_id",
+          "name_en"
+        ]
+      ],
+      "foreign_keys": [
+        {
+          "column": "brand_id",
+          "references": "brands.id",
+          "on_delete": "restrict"
+        }
+      ],
+      "indexes": [
+        [
+          "brand_id"
+        ]
+      ]
+    },
+    "cars": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "model_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "owner_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": true
+        },
+        "slug": {
+          "postgres_type": "varchar(220)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "listing_code": {
+          "postgres_type": "varchar(32)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "title_fa": {
+          "postgres_type": "varchar(200)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "production_year_jalali": {
+          "postgres_type": "smallint",
+          "nullable": false,
+          "drizzle_mapping": "smallint",
+          "private": false
+        },
+        "mileage_km": {
+          "postgres_type": "integer",
+          "nullable": false,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "price_toman": {
+          "postgres_type": "bigint",
+          "nullable": false,
+          "drizzle_mapping": "bigint / bigint application mode; decimal strings at JSON boundary",
+          "private": false
+        },
+        "color_code": {
+          "postgres_type": "varchar(40)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "color_label_fa": {
+          "postgres_type": "varchar(80)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "condition": {
+          "postgres_type": "body_condition",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / body_condition",
+          "private": false
+        },
+        "condition_note_fa": {
+          "postgres_type": "text",
+          "nullable": true,
+          "drizzle_mapping": "text",
+          "private": false
+        },
+        "status": {
+          "postgres_type": "car_status",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / car_status",
+          "private": false
+        },
+        "city_fa": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "public_seller_name": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "description_fa": {
+          "postgres_type": "text",
+          "nullable": false,
+          "drizzle_mapping": "text",
+          "private": false
+        },
+        "published_at": {
+          "postgres_type": "timestamptz",
+          "nullable": true,
+          "drizzle_mapping": "timestamp / withTimezone true / date mode",
+          "private": false
+        },
+        "created_at": {
+          "postgres_type": "timestamptz",
+          "nullable": false,
+          "drizzle_mapping": "timestamp / withTimezone true / date mode",
+          "private": false
+        },
+        "updated_at": {
+          "postgres_type": "timestamptz",
+          "nullable": false,
+          "drizzle_mapping": "timestamp / withTimezone true / date mode",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "slug"
+        ],
+        [
+          "listing_code"
+        ]
+      ],
+      "foreign_keys": [
+        {
+          "column": "model_id",
+          "references": "models.id",
+          "on_delete": "restrict"
+        },
+        {
+          "column": "owner_id",
+          "references": "owners.id",
+          "on_delete": "restrict"
+        }
+      ],
+      "checks": [
+        "mileage_km >= 0",
+        "price_toman > 0",
+        "production_year_jalali BETWEEN 1300 AND 1500",
+        "published_at is required for published available/reserved/sold records"
+      ],
+      "indexes": [
+        [
+          "status",
+          "price_toman",
+          "id"
+        ],
+        [
+          "status",
+          "mileage_km",
+          "id"
+        ],
+        [
+          "status",
+          "published_at",
+          "id"
+        ],
+        [
+          "model_id",
+          "status",
+          "production_year_jalali"
+        ],
+        [
+          "owner_id"
+        ]
+      ]
+    },
+    "car_images": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "car_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "asset_path": {
+          "postgres_type": "text",
+          "nullable": false,
+          "drizzle_mapping": "text",
+          "private": false
+        },
+        "role": {
+          "postgres_type": "image_role",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / image_role",
+          "private": false
+        },
+        "sort_order": {
+          "postgres_type": "smallint",
+          "nullable": false,
+          "drizzle_mapping": "smallint",
+          "private": false
+        },
+        "alt_fa": {
+          "postgres_type": "varchar(300)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "width": {
+          "postgres_type": "integer",
+          "nullable": false,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "height": {
+          "postgres_type": "integer",
+          "nullable": false,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "is_illustrative": {
+          "postgres_type": "boolean",
+          "nullable": false,
+          "drizzle_mapping": "boolean",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "car_id",
+          "sort_order"
+        ]
+      ],
+      "foreign_keys": [
+        {
+          "column": "car_id",
+          "references": "cars.id",
+          "on_delete": "cascade"
+        }
+      ],
+      "checks": [
+        "sort_order >= 0",
+        "width > 0 AND height > 0"
+      ],
+      "partial_unique": [
+        {
+          "columns": [
+            "car_id"
+          ],
+          "where": "role = 'main'"
+        }
+      ]
+    },
+    "payment_options": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "car_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "method": {
+          "postgres_type": "payment_method",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / payment_method",
+          "private": false
+        },
+        "down_payment_toman": {
+          "postgres_type": "bigint",
+          "nullable": true,
+          "drizzle_mapping": "bigint / bigint application mode; decimal strings at JSON boundary",
+          "private": false
+        },
+        "term_months": {
+          "postgres_type": "smallint",
+          "nullable": true,
+          "drizzle_mapping": "smallint",
+          "private": false
+        },
+        "annual_rate_bps": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "terms_fa": {
+          "postgres_type": "text",
+          "nullable": true,
+          "drizzle_mapping": "text",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "car_id",
+          "method"
+        ]
+      ],
+      "foreign_keys": [
+        {
+          "column": "car_id",
+          "references": "cars.id",
+          "on_delete": "cascade"
+        }
+      ],
+      "checks": [
+        "down_payment_toman IS NULL OR down_payment_toman > 0",
+        "term_months IS NULL OR term_months > 0",
+        "annual_rate_bps IS NULL OR annual_rate_bps >= 0",
+        "method != installment implies down_payment_toman, term_months and annual_rate_bps are NULL"
+      ]
+    },
+    "car_specs": {
+      "columns": {
+        "car_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "body_type": {
+          "postgres_type": "body_type",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / body_type",
+          "private": false
+        },
+        "fuel_type": {
+          "postgres_type": "fuel_type",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / fuel_type",
+          "private": false
+        },
+        "transmission": {
+          "postgres_type": "transmission",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / transmission",
+          "private": false
+        },
+        "drivetrain": {
+          "postgres_type": "drivetrain",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / drivetrain",
+          "private": false
+        },
+        "engine_cc": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "power_hp": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "torque_nm": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "battery_kwh": {
+          "postgres_type": "numeric(6,2)",
+          "nullable": true,
+          "drizzle_mapping": "numeric / precision 6 / scale 2 / decimal-string mode",
+          "private": false
+        },
+        "range_km": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "seats": {
+          "postgres_type": "smallint",
+          "nullable": true,
+          "drizzle_mapping": "smallint",
+          "private": false
+        },
+        "length_mm": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "width_mm": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "height_mm": {
+          "postgres_type": "integer",
+          "nullable": true,
+          "drizzle_mapping": "integer",
+          "private": false
+        },
+        "spec_source": {
+          "postgres_type": "varchar(80)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "verified": {
+          "postgres_type": "boolean",
+          "nullable": false,
+          "drizzle_mapping": "boolean",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "car_id"
+      ],
+      "unique": [],
+      "foreign_keys": [
+        {
+          "column": "car_id",
+          "references": "cars.id",
+          "on_delete": "cascade"
+        }
+      ],
+      "checks": [
+        "All known numeric measurements must be positive",
+        "fuel_type = electric implies engine_cc IS NULL",
+        "battery_kwh and range_km may be NULL; NULL means not recorded"
+      ]
+    },
+    "features": {
+      "columns": {
+        "id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "code": {
+          "postgres_type": "varchar(80)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        },
+        "label_fa": {
+          "postgres_type": "varchar(120)",
+          "nullable": false,
+          "drizzle_mapping": "varchar / matching declared length",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "code"
+        ]
+      ],
+      "foreign_keys": []
+    },
+    "car_features": {
+      "columns": {
+        "car_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "feature_id": {
+          "postgres_type": "uuid",
+          "nullable": false,
+          "drizzle_mapping": "uuid",
+          "private": false
+        },
+        "availability": {
+          "postgres_type": "feature_availability",
+          "nullable": false,
+          "drizzle_mapping": "pgEnum / feature_availability",
+          "private": false
+        }
+      },
+      "primary_key": [
+        "car_id",
+        "feature_id"
+      ],
+      "unique": [],
+      "foreign_keys": [
+        {
+          "column": "car_id",
+          "references": "cars.id",
+          "on_delete": "cascade"
+        },
+        {
+          "column": "feature_id",
+          "references": "features.id",
+          "on_delete": "cascade"
+        }
+      ]
+    }
+  },
+  "import_order": [
+    "owners",
+    "brands",
+    "models",
+    "cars",
+    "car_images",
+    "payment_options",
+    "car_specs",
+    "features",
+    "car_features"
+  ],
+  "application_invariants": [
+    "All public listings require at least one image with role main and one payment option. Enforce in the publishing transaction; partial unique only ensures at most one main.",
+    "Every car must reference an owner. Never send owner_id or the owners row in public API responses.",
+    "Installment down payment must be less than or equal to the current car price; validate across rows in a transaction.",
+    "Changing price must revalidate installment options.",
+    "Known Gregorian model year cannot be translated to Jalali by simply subtracting 621. Store a declared Jalali production year from documentation; optionally add documented production_date separately.",
+    "updated_at must be updated by the server on each change.",
+    "Public read routes return available listings by default. Admin writes require role and record-level authorization.",
+    "Store one canonical amount in toman, not rial, and convert million-toman URL bounds exactly by 1,000,000."
+  ],
+  "defaults": {
+    "id": "database-generated UUID for real records; deterministic supplied UUIDs for mock import",
+    "created_at": "database current timestamp",
+    "updated_at": "database current timestamp on insertion; explicit update thereafter",
+    "status": "available",
+    "verified": false,
+    "is_illustrative": false
+  }
+}

@@ -1,0 +1,3160 @@
+{
+  "_meta": {
+    "dataset": "Auto ML / VC-045",
+    "version": 1,
+    "synthetic": true,
+    "warning": "All prices, years, mileage, ownership, conditions and technical values are fictional demonstration data. AI images are illustrative and are not verified against exact trim/year. Not production inventory.",
+    "currency": "TOMAN",
+    "price_encoding": "base-unit integer as decimal string; never floating point",
+    "year_calendar": "persian",
+    "import_order": [
+      "owners",
+      "brands",
+      "models",
+      "cars",
+      "car_images",
+      "payment_options",
+      "car_specs",
+      "features",
+      "car_features"
+    ]
+  },
+  "owners": [
+    {
+      "id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "display_name": "مالک نمونه 1",
+      "legal_name": "شخص آزمایشی 1",
+      "email": "owner1@example.invalid",
+      "phone": null,
+      "public_contact_label": "نمایشگاه Auto ML",
+      "created_at": "2026-10-20T08:00:00Z"
+    },
+    {
+      "id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "display_name": "مالک نمونه 2",
+      "legal_name": "شخص آزمایشی 2",
+      "email": "owner2@example.invalid",
+      "phone": null,
+      "public_contact_label": "نمایشگاه Auto ML",
+      "created_at": "2026-10-20T08:00:00Z"
+    },
+    {
+      "id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "display_name": "مالک نمونه 3",
+      "legal_name": "شخص آزمایشی 3",
+      "email": "owner3@example.invalid",
+      "phone": null,
+      "public_contact_label": "نمایشگاه Auto ML",
+      "created_at": "2026-10-20T08:00:00Z"
+    }
+  ],
+  "brands": [
+    {
+      "id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw",
+      "name_en": "BMW",
+      "name_fa": "بی‌ام‌و"
+    },
+    {
+      "id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz",
+      "name_en": "Mercedes-Benz",
+      "name_fa": "مرسدس‌بنز"
+    },
+    {
+      "id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen",
+      "name_en": "Volkswagen",
+      "name_fa": "فولکس‌واگن"
+    },
+    {
+      "id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia",
+      "name_en": "Kia",
+      "name_fa": "کیا"
+    },
+    {
+      "id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai",
+      "name_en": "Hyundai",
+      "name_fa": "هیوندای"
+    },
+    {
+      "id": "5c07649b-60e6-5716-81dd-bbad9380c10a",
+      "slug": "peugeot",
+      "name_en": "Peugeot",
+      "name_fa": "پژو"
+    }
+  ],
+  "models": [
+    {
+      "id": "fbb0021d-3870-5585-9446-7a4f0f137757",
+      "brand_id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw-3-series",
+      "name_en": "3 Series",
+      "name_fa": "سری ۳"
+    },
+    {
+      "id": "b7616eed-e8ab-5037-8148-d43fae589dc8",
+      "brand_id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw-5-series",
+      "name_en": "5 Series",
+      "name_fa": "سری ۵"
+    },
+    {
+      "id": "ca133434-75a3-5e7d-8190-b823880fa089",
+      "brand_id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw-x3",
+      "name_en": "X3",
+      "name_fa": "X3"
+    },
+    {
+      "id": "0bbfc8c8-ca8c-59fa-b12d-20303a0afffe",
+      "brand_id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw-x5",
+      "name_en": "X5",
+      "name_fa": "X5"
+    },
+    {
+      "id": "67dad350-7834-5255-b221-8d362706c334",
+      "brand_id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw-i4",
+      "name_en": "i4",
+      "name_fa": "i4"
+    },
+    {
+      "id": "6451a49d-d37d-5154-a4ca-a0f66508e97f",
+      "brand_id": "fad159da-3dd0-59af-9b4f-4d4cccc357cb",
+      "slug": "bmw-ix",
+      "name_en": "iX",
+      "name_fa": "iX"
+    },
+    {
+      "id": "44e1341f-ef20-56f0-a611-8b4f096426a9",
+      "brand_id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz-c-class",
+      "name_en": "C-Class",
+      "name_fa": "کلاس C"
+    },
+    {
+      "id": "7d6dd2d3-8bb1-52c9-aa47-e24a96600a1e",
+      "brand_id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz-e-class",
+      "name_en": "E-Class",
+      "name_fa": "کلاس E"
+    },
+    {
+      "id": "e4581e85-b024-518f-95d1-740fcbbead1e",
+      "brand_id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz-glc",
+      "name_en": "GLC",
+      "name_fa": "GLC"
+    },
+    {
+      "id": "121ee1b7-7e94-5801-9cdc-d4f570483e99",
+      "brand_id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz-gle",
+      "name_en": "GLE",
+      "name_fa": "GLE"
+    },
+    {
+      "id": "525c7514-f3ee-5fac-b20e-dfc294655da5",
+      "brand_id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz-cla",
+      "name_en": "CLA",
+      "name_fa": "CLA"
+    },
+    {
+      "id": "f971278b-2730-5946-9cb0-e6cd735b1754",
+      "brand_id": "101ce281-ba73-5206-9ffe-3dd1abddb6da",
+      "slug": "mercedes-benz-eqe",
+      "name_en": "EQE",
+      "name_fa": "EQE"
+    },
+    {
+      "id": "86a5812e-e5f9-539b-90ee-4a8559aeb61e",
+      "brand_id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen-jetta",
+      "name_en": "Jetta",
+      "name_fa": "جتا"
+    },
+    {
+      "id": "76def855-c291-55d8-a158-5b6fdcd9128a",
+      "brand_id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen-tiguan",
+      "name_en": "Tiguan",
+      "name_fa": "تیگوان"
+    },
+    {
+      "id": "690369af-10d1-520e-8390-464af81ad6a0",
+      "brand_id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen-taos",
+      "name_en": "Taos",
+      "name_fa": "تائوس"
+    },
+    {
+      "id": "43de8547-15a1-576c-96e4-3ec878e6ac84",
+      "brand_id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen-atlas",
+      "name_en": "Atlas",
+      "name_fa": "اطلس"
+    },
+    {
+      "id": "2429f722-83a0-565d-8cfd-8131f4308f56",
+      "brand_id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen-golf-gti",
+      "name_en": "Golf GTI",
+      "name_fa": "گلف GTI"
+    },
+    {
+      "id": "9a729802-0080-5a38-bcfd-31515efc78db",
+      "brand_id": "eb1487fa-c5ec-528f-8534-1536490a7693",
+      "slug": "volkswagen-id-4",
+      "name_en": "ID.4",
+      "name_fa": "ID.4"
+    },
+    {
+      "id": "78dae35a-ce4c-59e5-9419-7d23770ba2e7",
+      "brand_id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia-k4",
+      "name_en": "K4",
+      "name_fa": "K4"
+    },
+    {
+      "id": "93eb682c-6043-5aa0-ab43-ebda19b0db1d",
+      "brand_id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia-k5",
+      "name_en": "K5",
+      "name_fa": "K5"
+    },
+    {
+      "id": "7fc9ba45-050e-5036-ae24-59c42ab6fa1a",
+      "brand_id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia-sportage",
+      "name_en": "Sportage",
+      "name_fa": "اسپورتیج"
+    },
+    {
+      "id": "c4d5fa93-cf25-55fe-9962-71cd3aff69e7",
+      "brand_id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia-sorento",
+      "name_en": "Sorento",
+      "name_fa": "سورنتو"
+    },
+    {
+      "id": "6cc250eb-21ac-5715-8eef-758c34f96831",
+      "brand_id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia-ev6",
+      "name_en": "EV6",
+      "name_fa": "EV6"
+    },
+    {
+      "id": "dccdbd25-b756-5f9a-9355-e9d37531936a",
+      "brand_id": "94663ace-bc4a-553d-a626-f5334ed48c99",
+      "slug": "kia-ev9",
+      "name_en": "EV9",
+      "name_fa": "EV9"
+    },
+    {
+      "id": "7b2f6256-2520-5bb0-bd16-f1f9e565db59",
+      "brand_id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai-elantra",
+      "name_en": "Elantra",
+      "name_fa": "النترا"
+    },
+    {
+      "id": "859d1561-28d4-5377-afa8-ec87daefd5c1",
+      "brand_id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai-sonata",
+      "name_en": "Sonata",
+      "name_fa": "سوناتا"
+    },
+    {
+      "id": "7c2765e2-4998-53d6-8566-150cac785d36",
+      "brand_id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai-tucson",
+      "name_en": "Tucson",
+      "name_fa": "توسان"
+    },
+    {
+      "id": "2bf9d6e6-68e2-5643-9fd0-b3eb3de7e8bf",
+      "brand_id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai-santa-fe",
+      "name_en": "Santa Fe",
+      "name_fa": "سانتافه"
+    },
+    {
+      "id": "0f0c5170-63a3-55b8-8bc2-0e772f8c9a1f",
+      "brand_id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai-ioniq-5",
+      "name_en": "IONIQ 5",
+      "name_fa": "IONIQ 5"
+    },
+    {
+      "id": "cafcdc06-aa6a-5c04-b1da-7052cc8f5967",
+      "brand_id": "74db5d4f-8a68-5bc0-910c-8088f4b1ae9f",
+      "slug": "hyundai-palisade",
+      "name_en": "Palisade",
+      "name_fa": "پالیسید"
+    }
+  ],
+  "cars": [
+    {
+      "id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "model_id": "fbb0021d-3870-5585-9446-7a4f0f137757",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "bmw-3-series-demo",
+      "listing_code": "AML-1001",
+      "title_fa": "بی‌ام‌و سری ۳",
+      "production_year_jalali": 1399,
+      "mileage_km": 42000,
+      "price_toman": "4950000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-23T08:00:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "model_id": "b7616eed-e8ab-5037-8148-d43fae589dc8",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "bmw-5-series-demo",
+      "listing_code": "AML-1002",
+      "title_fa": "بی‌ام‌و سری ۵",
+      "production_year_jalali": 1399,
+      "mileage_km": 63000,
+      "price_toman": "6800000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "repainted_panel",
+      "condition_note_fa": "یک پنل رنگ‌شده؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-23T08:01:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "model_id": "ca133434-75a3-5e7d-8190-b823880fa089",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "bmw-x3-demo",
+      "listing_code": "AML-1003",
+      "title_fa": "بی‌ام‌و X3",
+      "production_year_jalali": 1400,
+      "mileage_km": 38000,
+      "price_toman": "7200000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-23T08:02:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "model_id": "0bbfc8c8-ca8c-59fa-b12d-20303a0afffe",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "bmw-x5-demo",
+      "listing_code": "AML-1004",
+      "title_fa": "بی‌ام‌و X5",
+      "production_year_jalali": 1400,
+      "mileage_km": 51000,
+      "price_toman": "9800000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-23T08:03:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "model_id": "67dad350-7834-5255-b221-8d362706c334",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "bmw-i4-demo",
+      "listing_code": "AML-1005",
+      "title_fa": "بی‌ام‌و i4",
+      "production_year_jalali": 1402,
+      "mileage_km": 18000,
+      "price_toman": "8100000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-23T08:04:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "model_id": "6451a49d-d37d-5154-a4ca-a0f66508e97f",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "bmw-ix-demo",
+      "listing_code": "AML-1006",
+      "title_fa": "بی‌ام‌و iX",
+      "production_year_jalali": 1402,
+      "mileage_km": 22000,
+      "price_toman": "12500000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-23T08:05:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "model_id": "44e1341f-ef20-56f0-a611-8b4f096426a9",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "mercedes-benz-c-class-demo",
+      "listing_code": "AML-1007",
+      "title_fa": "مرسدس‌بنز کلاس C",
+      "production_year_jalali": 1399,
+      "mileage_km": 35000,
+      "price_toman": "5250000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-22T08:06:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "model_id": "7d6dd2d3-8bb1-52c9-aa47-e24a96600a1e",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "mercedes-benz-e-class-demo",
+      "listing_code": "AML-1008",
+      "title_fa": "مرسدس‌بنز کلاس E",
+      "production_year_jalali": 1400,
+      "mileage_km": 55000,
+      "price_toman": "7300000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-22T08:07:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "model_id": "e4581e85-b024-518f-95d1-740fcbbead1e",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "mercedes-benz-glc-demo",
+      "listing_code": "AML-1009",
+      "title_fa": "مرسدس‌بنز GLC",
+      "production_year_jalali": 1401,
+      "mileage_km": 32000,
+      "price_toman": "7600000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "repainted_panel",
+      "condition_note_fa": "یک پنل رنگ‌شده؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-22T08:08:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "model_id": "121ee1b7-7e94-5801-9cdc-d4f570483e99",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "mercedes-benz-gle-demo",
+      "listing_code": "AML-1010",
+      "title_fa": "مرسدس‌بنز GLE",
+      "production_year_jalali": 1401,
+      "mileage_km": 47000,
+      "price_toman": "10500000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-22T08:09:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "model_id": "525c7514-f3ee-5fac-b20e-dfc294655da5",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "mercedes-benz-cla-demo",
+      "listing_code": "AML-1011",
+      "title_fa": "مرسدس‌بنز CLA",
+      "production_year_jalali": 1400,
+      "mileage_km": 28000,
+      "price_toman": "4700000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-22T08:10:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "model_id": "f971278b-2730-5946-9cb0-e6cd735b1754",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "mercedes-benz-eqe-demo",
+      "listing_code": "AML-1012",
+      "title_fa": "مرسدس‌بنز EQE",
+      "production_year_jalali": 1402,
+      "mileage_km": 16000,
+      "price_toman": "9000000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-22T08:11:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "model_id": "86a5812e-e5f9-539b-90ee-4a8559aeb61e",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "volkswagen-jetta-demo",
+      "listing_code": "AML-1013",
+      "title_fa": "فولکس‌واگن جتا",
+      "production_year_jalali": 1400,
+      "mileage_km": 58000,
+      "price_toman": "2350000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-21T08:12:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "model_id": "76def855-c291-55d8-a158-5b6fdcd9128a",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "volkswagen-tiguan-demo",
+      "listing_code": "AML-1014",
+      "title_fa": "فولکس‌واگن تیگوان",
+      "production_year_jalali": 1401,
+      "mileage_km": 44000,
+      "price_toman": "3800000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "repainted_panel",
+      "condition_note_fa": "یک پنل رنگ‌شده؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-21T08:13:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "model_id": "690369af-10d1-520e-8390-464af81ad6a0",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "volkswagen-taos-demo",
+      "listing_code": "AML-1015",
+      "title_fa": "فولکس‌واگن تائوس",
+      "production_year_jalali": 1402,
+      "mileage_km": 26000,
+      "price_toman": "2900000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-21T08:14:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "model_id": "43de8547-15a1-576c-96e4-3ec878e6ac84",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "volkswagen-atlas-demo",
+      "listing_code": "AML-1016",
+      "title_fa": "فولکس‌واگن اطلس",
+      "production_year_jalali": 1401,
+      "mileage_km": 39000,
+      "price_toman": "4800000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-21T08:15:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "model_id": "2429f722-83a0-565d-8cfd-8131f4308f56",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "volkswagen-golf-gti-demo",
+      "listing_code": "AML-1017",
+      "title_fa": "فولکس‌واگن گلف GTI",
+      "production_year_jalali": 1402,
+      "mileage_km": 31000,
+      "price_toman": "3100000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-21T08:16:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "model_id": "9a729802-0080-5a38-bcfd-31515efc78db",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "volkswagen-id-4-demo",
+      "listing_code": "AML-1018",
+      "title_fa": "فولکس‌واگن ID.4",
+      "production_year_jalali": 1402,
+      "mileage_km": 21000,
+      "price_toman": "3300000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-21T08:17:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "model_id": "78dae35a-ce4c-59e5-9419-7d23770ba2e7",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "kia-k4-demo",
+      "listing_code": "AML-1019",
+      "title_fa": "کیا K4",
+      "production_year_jalali": 1403,
+      "mileage_km": 9000,
+      "price_toman": "2150000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-20T08:18:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "model_id": "93eb682c-6043-5aa0-ab43-ebda19b0db1d",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "kia-k5-demo",
+      "listing_code": "AML-1020",
+      "title_fa": "کیا K5",
+      "production_year_jalali": 1402,
+      "mileage_km": 24000,
+      "price_toman": "2800000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-20T08:19:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "model_id": "7fc9ba45-050e-5036-ae24-59c42ab6fa1a",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "kia-sportage-demo",
+      "listing_code": "AML-1021",
+      "title_fa": "کیا اسپورتیج",
+      "production_year_jalali": 1401,
+      "mileage_km": 46000,
+      "price_toman": "3250000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "repainted_panel",
+      "condition_note_fa": "یک پنل رنگ‌شده؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-20T08:20:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "model_id": "c4d5fa93-cf25-55fe-9962-71cd3aff69e7",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "kia-sorento-demo",
+      "listing_code": "AML-1022",
+      "title_fa": "کیا سورنتو",
+      "production_year_jalali": 1402,
+      "mileage_km": 34000,
+      "price_toman": "4100000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-20T08:21:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "model_id": "6cc250eb-21ac-5715-8eef-758c34f96831",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "kia-ev6-demo",
+      "listing_code": "AML-1023",
+      "title_fa": "کیا EV6",
+      "production_year_jalali": 1402,
+      "mileage_km": 19000,
+      "price_toman": "4500000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-20T08:22:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "model_id": "dccdbd25-b756-5f9a-9355-e9d37531936a",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "kia-ev9-demo",
+      "listing_code": "AML-1024",
+      "title_fa": "کیا EV9",
+      "production_year_jalali": 1403,
+      "mileage_km": 8000,
+      "price_toman": "5900000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-20T08:23:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "model_id": "7b2f6256-2520-5bb0-bd16-f1f9e565db59",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "hyundai-elantra-demo",
+      "listing_code": "AML-1025",
+      "title_fa": "هیوندای النترا",
+      "production_year_jalali": 1401,
+      "mileage_km": 52000,
+      "price_toman": "1950000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-19T08:24:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "model_id": "859d1561-28d4-5377-afa8-ec87daefd5c1",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "hyundai-sonata-demo",
+      "listing_code": "AML-1026",
+      "title_fa": "هیوندای سوناتا",
+      "production_year_jalali": 1401,
+      "mileage_km": 61000,
+      "price_toman": "2700000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-19T08:25:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "model_id": "7c2765e2-4998-53d6-8566-150cac785d36",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "hyundai-tucson-demo",
+      "listing_code": "AML-1027",
+      "title_fa": "هیوندای توسان",
+      "production_year_jalali": 1401,
+      "mileage_km": 48000,
+      "price_toman": "3150000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-19T08:26:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "model_id": "2bf9d6e6-68e2-5643-9fd0-b3eb3de7e8bf",
+      "owner_id": "91903f7a-4251-5e73-ac38-e345f9cb764a",
+      "slug": "hyundai-santa-fe-demo",
+      "listing_code": "AML-1028",
+      "title_fa": "هیوندای سانتافه",
+      "production_year_jalali": 1401,
+      "mileage_km": 57000,
+      "price_toman": "3900000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "repainted_panel",
+      "condition_note_fa": "یک پنل رنگ‌شده؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-19T08:27:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "model_id": "0f0c5170-63a3-55b8-8bc2-0e772f8c9a1f",
+      "owner_id": "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6",
+      "slug": "hyundai-ioniq-5-demo",
+      "listing_code": "AML-1029",
+      "title_fa": "هیوندای IONIQ 5",
+      "production_year_jalali": 1402,
+      "mileage_km": 17000,
+      "price_toman": "4200000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-19T08:28:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    },
+    {
+      "id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "model_id": "cafcdc06-aa6a-5c04-b1da-7052cc8f5967",
+      "owner_id": "538f6739-0d0f-558c-8033-fdbb1f1c70bf",
+      "slug": "hyundai-palisade-demo",
+      "listing_code": "AML-1030",
+      "title_fa": "هیوندای پالیسید",
+      "production_year_jalali": 1402,
+      "mileage_km": 36000,
+      "price_toman": "5100000000",
+      "color_code": "white",
+      "color_label_fa": "سفید",
+      "condition": "original_paint",
+      "condition_note_fa": "بدون رنگ؛ اطلاعات نمونه",
+      "status": "available",
+      "city_fa": "تهران",
+      "public_seller_name": "نمایشگاه Auto ML",
+      "description_fa": "خودروی نمونه برای نمایش طراحی. وضعیت، قیمت و مشخصات پیش از انتشار باید با مدارک واقعی جایگزین شوند.",
+      "published_at": "2026-10-19T08:29:00Z",
+      "created_at": "2026-10-18T08:00:00Z",
+      "updated_at": "2026-10-23T10:00:00Z"
+    }
+  ],
+  "car_images": [
+    {
+      "id": "432607e7-edd8-58dd-a26b-bff60af23d30",
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "asset_path": "selected/bmw-3-series/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "بی‌ام‌و سری ۳ سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "b59aa1f6-57af-5787-899d-60442e1257a3",
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "asset_path": "selected/bmw-3-series/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "بی‌ام‌و سری ۳ سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "4955ce8b-b4b1-59ee-a054-f08ea1a3e881",
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "asset_path": "selected/bmw-5-series/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "بی‌ام‌و سری ۵ سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "73083fb7-bbec-5ead-a0b5-74392f2de191",
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "asset_path": "selected/bmw-5-series/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "بی‌ام‌و سری ۵ سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "347c7573-db41-5332-9d1d-4ebed415dfff",
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "asset_path": "selected/bmw-x3/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "بی‌ام‌و X3 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "b2d38749-8aee-52f3-bb64-4e003eb084c9",
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "asset_path": "selected/bmw-x3/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "بی‌ام‌و X3 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "29c8a2df-fc08-540b-b0fa-063f0d66d6c1",
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "asset_path": "selected/bmw-x5/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "بی‌ام‌و X5 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "c3cf48b2-5f9c-5aa1-afeb-72bb83871d7c",
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "asset_path": "selected/bmw-x5/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "بی‌ام‌و X5 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "5431e4b9-aafe-5792-99d3-a195ad513ac1",
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "asset_path": "selected/bmw-i4/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "بی‌ام‌و i4 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "52398a31-e3c9-58bf-a6c8-8399a0c55355",
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "asset_path": "selected/bmw-i4/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "بی‌ام‌و i4 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "6e4b4aa5-7c20-5afd-b233-ff9415194c7f",
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "asset_path": "selected/bmw-ix/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "بی‌ام‌و iX سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "9224747a-7e9c-582d-8441-3f1fff706b07",
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "asset_path": "selected/bmw-ix/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "بی‌ام‌و iX سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "92446f82-4779-5867-bb34-718aa7ae77c8",
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "asset_path": "selected/mercedes-benz-c-class/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "مرسدس‌بنز کلاس C سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "0b42bed3-91d5-5dc9-bdeb-f5816fc493c8",
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "asset_path": "selected/mercedes-benz-c-class/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "مرسدس‌بنز کلاس C سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "3080eaa7-6455-5c3a-8516-07d785930a83",
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "asset_path": "selected/mercedes-benz-e-class/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "مرسدس‌بنز کلاس E سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "12dc0a94-bc4d-5751-a8d2-456a31970783",
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "asset_path": "selected/mercedes-benz-e-class/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "مرسدس‌بنز کلاس E سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "53d7a994-fc95-5ea8-b1d3-da360107a831",
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "asset_path": "selected/mercedes-benz-glc/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "مرسدس‌بنز GLC سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "6e2af489-39c6-55b2-8275-0e46d0193d45",
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "asset_path": "selected/mercedes-benz-glc/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "مرسدس‌بنز GLC سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "e6a3a43c-c975-5868-b23e-670a75625385",
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "asset_path": "selected/mercedes-benz-gle/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "مرسدس‌بنز GLE سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "db9c23f4-8786-5f7c-a52c-3ac6d3e50c78",
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "asset_path": "selected/mercedes-benz-gle/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "مرسدس‌بنز GLE سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "9d2b8f6e-4d97-59eb-b583-464c91d8d158",
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "asset_path": "selected/mercedes-benz-cla/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "مرسدس‌بنز CLA سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "d5015dbb-06cd-539e-a197-e0767fa8be81",
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "asset_path": "selected/mercedes-benz-cla/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "مرسدس‌بنز CLA سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "0e787c4c-d8bf-56dc-9827-170314571276",
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "asset_path": "selected/mercedes-benz-eqe/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "مرسدس‌بنز EQE سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "fa5b698a-ab5f-5708-934c-ddb0c3fa74c5",
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "asset_path": "selected/mercedes-benz-eqe/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "مرسدس‌بنز EQE سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "041a148d-abd3-5866-81c1-7b7759e225a4",
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "asset_path": "selected/volkswagen-jetta/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "فولکس‌واگن جتا سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "6b20c634-02b3-59b9-8056-7f190bc60747",
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "asset_path": "selected/volkswagen-jetta/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "فولکس‌واگن جتا سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "881b8d80-cdf7-56bc-a95f-775be18ac15f",
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "asset_path": "selected/volkswagen-tiguan/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "فولکس‌واگن تیگوان سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "162f60d1-57fc-5468-9c13-54a48d1f58da",
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "asset_path": "selected/volkswagen-tiguan/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "فولکس‌واگن تیگوان سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "bee19e99-78bb-5948-8a77-2d4d49582eab",
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "asset_path": "selected/volkswagen-taos/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "فولکس‌واگن تائوس سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "56c0c101-07eb-5443-b767-ad150ca116a9",
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "asset_path": "selected/volkswagen-taos/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "فولکس‌واگن تائوس سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "0089113e-a563-551f-8cf8-91a6ad804c30",
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "asset_path": "selected/volkswagen-atlas/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "فولکس‌واگن اطلس سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "e740194b-b08c-5e7c-b25d-6c003c86dfc4",
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "asset_path": "selected/volkswagen-atlas/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "فولکس‌واگن اطلس سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "353385d0-6b9e-5eeb-82a8-fc45edaa1cde",
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "asset_path": "selected/volkswagen-golf-gti/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "فولکس‌واگن گلف GTI سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "8ff319e8-4a61-5ee3-8baf-7ee541f41045",
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "asset_path": "selected/volkswagen-golf-gti/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "فولکس‌واگن گلف GTI سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "19fcfb8a-16d2-50af-87dc-1468005a17e7",
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "asset_path": "selected/volkswagen-id-4/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "فولکس‌واگن ID.4 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "5fee9a1c-9cc5-5a6b-8f0e-7b6b68a2a272",
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "asset_path": "selected/volkswagen-id-4/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "فولکس‌واگن ID.4 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "f2544443-68cb-5b2f-a535-f718f8ed6b02",
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "asset_path": "selected/kia-k4/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "کیا K4 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "04d9820e-e64e-565e-9197-010f5a7d3b54",
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "asset_path": "selected/kia-k4/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "کیا K4 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "67a8c7a2-aa05-5c0a-86d4-71483e3c52df",
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "asset_path": "selected/kia-k5/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "کیا K5 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "f2aa0601-4e8c-59ad-b822-dbc096ad8c1a",
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "asset_path": "selected/kia-k5/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "کیا K5 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "de28ff20-98bb-5472-8a8c-3fb81883ed75",
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "asset_path": "selected/kia-sportage/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "کیا اسپورتیج سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "4b4be8da-7d91-5e4f-9761-c11471f1275f",
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "asset_path": "selected/kia-sportage/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "کیا اسپورتیج سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "4892a70d-3acc-5465-9c75-00a9c65d0864",
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "asset_path": "selected/kia-sorento/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "کیا سورنتو سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "2b03fbd6-7db9-5fa0-add8-2a565a1d6f27",
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "asset_path": "selected/kia-sorento/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "کیا سورنتو سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "0aa626d8-dd96-5d3b-a338-b0f31cbdde62",
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "asset_path": "selected/kia-ev6/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "کیا EV6 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "1f6f7b39-9f89-53f9-9c0f-73ce6c9aa778",
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "asset_path": "selected/kia-ev6/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "کیا EV6 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "42242602-fcf0-5a56-9b67-a26074f16d4a",
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "asset_path": "selected/kia-ev9/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "کیا EV9 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "b0e7a024-88f7-5aa7-a886-ccfedb37ff65",
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "asset_path": "selected/kia-ev9/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "کیا EV9 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "0e5e8225-0acd-5016-ae68-2521f570c397",
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "asset_path": "selected/hyundai-elantra/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "هیوندای النترا سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "77f8cbfb-f71b-5b7d-a098-796bc4680502",
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "asset_path": "selected/hyundai-elantra/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "هیوندای النترا سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "d39349bf-dec8-5cd9-8ceb-6bf6706ef0fc",
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "asset_path": "selected/hyundai-sonata/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "هیوندای سوناتا سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "ab826962-7ef7-528a-bb5e-60879a60e51b",
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "asset_path": "selected/hyundai-sonata/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "هیوندای سوناتا سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "d443db7e-021f-517a-807e-6b440ebc8b47",
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "asset_path": "selected/hyundai-tucson/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "هیوندای توسان سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "fe4ace2b-95d7-51c1-962e-f7adc16c72bc",
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "asset_path": "selected/hyundai-tucson/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "هیوندای توسان سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "69cebfbb-e0d4-5c1f-bc6c-b8e29d376a36",
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "asset_path": "selected/hyundai-santa-fe/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "هیوندای سانتافه سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "2e32f534-c0eb-51e2-a9ac-88bc8f49da80",
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "asset_path": "selected/hyundai-santa-fe/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "هیوندای سانتافه سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "95b02f5b-5d47-50a2-b157-9990444fd732",
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "asset_path": "selected/hyundai-ioniq-5/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "هیوندای IONIQ 5 سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "1bb19fe7-02d9-5189-94ed-51974fec79b4",
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "asset_path": "selected/hyundai-ioniq-5/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "هیوندای IONIQ 5 سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "e54e2eb8-3889-5644-84a9-637dea645fb3",
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "asset_path": "selected/hyundai-palisade/main.png",
+      "role": "main",
+      "sort_order": 0,
+      "alt_fa": "هیوندای پالیسید سفید، نمای سه‌رخ جلو",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    },
+    {
+      "id": "881fe96c-4fa1-5397-8acb-229a94941d4e",
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "asset_path": "selected/hyundai-palisade/lifestyle.png",
+      "role": "lifestyle",
+      "sort_order": 1,
+      "alt_fa": "هیوندای پالیسید سفید، تصویر محیطی",
+      "width": 1254,
+      "height": 1254,
+      "is_illustrative": true
+    }
+  ],
+  "payment_options": [
+    {
+      "id": "2373cb32-773a-5499-a8cf-4c0371f4fcbe",
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "069c060d-a6bc-5cd2-a163-74f68c04545c",
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "method": "installment",
+      "down_payment_toman": "2475000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "87bde80b-570d-5f0f-ab8c-f7440e0c283a",
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "5f810d64-82bd-5998-8dd1-93a8d9ea5171",
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "8b52c0c1-0947-5186-9325-ea19f1877d4b",
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "2547b2cc-6297-54a5-9d22-728c417e89dd",
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "method": "installment",
+      "down_payment_toman": "3600000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "78e5db79-955b-5a2d-81a7-e456f83142cb",
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "4f723e18-2aed-5fb7-b7e9-9ad2bfbf90c4",
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "method": "installment",
+      "down_payment_toman": "4900000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "8d684e98-2edb-529f-b4e3-4db46dadfc9e",
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "ebe3faf2-4902-5d07-94f1-d5773e8dd8b0",
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "b0249ee1-77e9-536f-80bf-68c3610a99bf",
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "c7b53972-ee27-589e-a1c8-82fc5f9f8f4e",
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "method": "installment",
+      "down_payment_toman": "6250000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "e4850d16-5d64-5adc-a26b-0813c1ae1702",
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "c079dbf5-cf77-5151-a8b5-f966503b9762",
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "method": "installment",
+      "down_payment_toman": "2625000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "f14fb139-2343-5180-ac53-613bf7e0f2ae",
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "6a832a1c-e9a3-56d7-be0b-2d83dbaf27b5",
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "dfef8aac-e2f4-534e-b08e-66634769ac1a",
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "method": "installment",
+      "down_payment_toman": "3800000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "7fbb3ebb-21e0-5f20-bdec-1547acc19cf8",
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "b1f494a9-ceec-5819-8c31-116a55a0db1f",
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "9e04819b-eb3b-5ee8-a30f-5f1c5e10a646",
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "method": "installment",
+      "down_payment_toman": "5250000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "3729cf40-4d81-5a8e-b745-b60c4a394ff5",
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "153a3335-fba7-5d2d-9d2a-5ddafed27a25",
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "7ad3a264-fba4-5a99-b84e-b55a88bef911",
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "method": "installment",
+      "down_payment_toman": "4500000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "11f17fa6-e426-5a29-af67-16be77fd3740",
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "1554d316-d250-5a3c-8d9c-fc099bbf3c84",
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "method": "installment",
+      "down_payment_toman": "1175000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "d0546a9d-78dc-5038-8df1-e0ee68196fa9",
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "c0651b67-6c5b-5aa6-bb5d-cd822a731f13",
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "58f8989b-c5bd-53df-833c-b28c339affc1",
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "6916b080-e0b2-56c0-97a3-f81faa3e4676",
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "method": "installment",
+      "down_payment_toman": "1450000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "3e506f09-ec0a-5250-805e-d13b087840ab",
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "c28364d7-9b75-5f70-85c2-970840585dd8",
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "method": "installment",
+      "down_payment_toman": "2400000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "b1337b98-8128-5231-9d2a-1c6304a2e2d4",
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "e61834c2-30e2-59a3-82a7-8468af42aaa0",
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "39ca4cf8-2465-5639-868a-2e994e4e1e1a",
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "06951d9f-35af-5eb3-a526-2f262014a9c3",
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "method": "installment",
+      "down_payment_toman": "1650000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "74a32485-4871-51d7-916d-4111de06d8d2",
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "9c332ca6-34b9-5c36-9ec3-84d59b5fcc1a",
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "method": "installment",
+      "down_payment_toman": "1075000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "0e9ac5b6-0243-5197-982d-5099ceb88e13",
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "6d5c93a4-5870-5077-b1c7-235c52850682",
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "797fb582-55a2-571d-8b9e-1ae3daf68a2b",
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "method": "installment",
+      "down_payment_toman": "1625000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "bf210853-cc0e-58bc-974d-7b28c3d48c2a",
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "0c6c4a50-0730-52d7-b2db-ca4073d2f33d",
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "91e03a21-8581-50fe-b142-f5fe68ecd3bd",
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "method": "installment",
+      "down_payment_toman": "2050000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "77a184e6-8cbd-594d-b221-4c30f8661c6d",
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "d2d4bb21-0c7c-5921-86b9-abc1dc1cd900",
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "9d34c16a-feee-532b-b1ef-88c1db2303a8",
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "method": "installment",
+      "down_payment_toman": "2950000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "fb20a45a-e96f-5a83-b270-7da68c5105da",
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "7bd67739-00b5-5f7e-8521-7ccb977d78bd",
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "method": "installment",
+      "down_payment_toman": "975000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "dfc17418-023f-5c8b-a9b3-9eeb96cde37e",
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "c43185c5-ae62-5762-9f72-3688cef224ea",
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "6ddedb59-ed58-5d15-8ec6-4da582ed07b5",
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "99f786ed-a8e8-52cb-8b77-da46aff4a539",
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "method": "installment",
+      "down_payment_toman": "1575000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "f102f552-fa7e-5287-80da-6705979b90c5",
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "5f3b4696-575a-5d8e-bab6-5e45cf9d1b6c",
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "method": "installment",
+      "down_payment_toman": "1950000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    },
+    {
+      "id": "582cd6e8-1e48-58a0-a6a1-60b5cf7d59cc",
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "96a87396-260d-5b92-8509-001152f4d70a",
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "method": "trade_in",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "889461c8-9716-5492-ac85-1bb8dd2babaf",
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "method": "cash",
+      "down_payment_toman": null,
+      "term_months": null,
+      "annual_rate_bps": null,
+      "terms_fa": null
+    },
+    {
+      "id": "4980fd1a-36f0-5062-b08e-17c843698612",
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "method": "installment",
+      "down_payment_toman": "2550000000",
+      "term_months": 24,
+      "annual_rate_bps": null,
+      "terms_fa": "شرایط نهایی پس از بررسی نمایشگاه اعلام می‌شود."
+    }
+  ],
+  "car_specs": [
+    {
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "body_type": "sedan",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "rwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "body_type": "suv",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "rwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "rwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "body_type": "sedan",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "rwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 7,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "body_type": "sedan",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "fwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 7,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "body_type": "sedan",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "fwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "body_type": "suv",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "fwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 7,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "body_type": "hatchback",
+      "fuel_type": "electric",
+      "transmission": "single_speed",
+      "drivetrain": "fwd",
+      "engine_cc": null,
+      "power_hp": 225,
+      "torque_nm": 310,
+      "battery_kwh": "75.0",
+      "range_km": 430,
+      "seats": 5,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    },
+    {
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "drivetrain": "fwd",
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "torque_nm": 280,
+      "battery_kwh": null,
+      "range_km": null,
+      "seats": 7,
+      "length_mm": 4700,
+      "width_mm": 1850,
+      "height_mm": 1650,
+      "spec_source": "synthetic_demo",
+      "verified": false
+    }
+  ],
+  "features": [
+    {
+      "id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "code": "rear_camera",
+      "label_fa": "دوربین عقب"
+    },
+    {
+      "id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "code": "parking_sensor",
+      "label_fa": "سنسور پارک"
+    },
+    {
+      "id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "code": "cruise_control",
+      "label_fa": "کروز کنترل"
+    }
+  ],
+  "car_features": [
+    {
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "feature_id": "1eb3a78d-4de5-56fe-8fea-d8317e10a3b9",
+      "availability": "present"
+    },
+    {
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "feature_id": "52b6d1c9-5d51-587a-84e0-0a6bd3a0842b",
+      "availability": "present"
+    },
+    {
+      "car_id": "2c3feb6e-fd6b-5836-9951-ddc1d674821c",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "a1284853-ca9d-5005-ad52-d5209bb89ba8",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "a8d2553c-eb12-53d3-a9f1-13e53a23279a",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "3e3afb9c-b417-5e2b-b7f3-2372a8f5d387",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "59171696-ea43-5a36-8207-6bc0c43e013f",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "ea1731b4-2485-5f6f-98ff-58e449b38a34",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "832dc273-c28d-54bb-86d1-89f87ed3f7e0",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "c2d0783d-ce6b-5411-b15d-1c4a0d2de5a4",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "3aefa770-f8fc-5a47-b655-11bc4f21e4e9",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "af567782-fc2b-5e25-9a34-070ebb10ed1f",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "4bcabcab-ba52-56f8-a731-e0aa435ff8ec",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "61886ba8-b3ba-5ff0-a3ec-46baf57c7187",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "20983651-5346-59d1-8517-8a576fce44f4",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "98cd2f4e-bf56-5c6b-b3a9-edd2ed49e201",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "564cdedb-b2e3-53c8-a9f1-3189fe7ffff5",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "8cac9bdc-a9c6-519b-87ca-a061ade284f3",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "8acd0aec-183e-53d2-98ed-d5ff8841d2ba",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "d913b430-9ddf-5271-ad69-97afe617c578",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "aa59ce03-de22-5204-831d-3c263d511fe8",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "26e1ffbe-2a0b-5b74-800a-7bb1be35379c",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "374b51a0-6c6a-54db-a175-225a35cff845",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "98231baa-cfbb-58f7-ad85-c679042a9515",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "ca253a60-7dc0-551f-bbed-c1df002543b7",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "3b815472-129c-51cd-891b-f383ddc3916f",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "c8343aaa-302b-5637-b4a4-5f5e049c8b67",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "921e11ac-e5e2-57c3-979d-2de349fbb49f",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "unknown"
+    },
+    {
+      "car_id": "cdd2db9a-ddde-557f-ad3a-dfccf5d16efa",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "c50e002e-1426-54bb-99f1-2dad031ec4cb",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "f36f4ce3-9f74-5097-b7f9-d59b04f68458",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    },
+    {
+      "car_id": "f5c8e306-44c3-5c4a-8c0d-33efff77203c",
+      "feature_id": "7447ec77-f363-5914-9194-ffe4d081e780",
+      "availability": "present"
+    }
+  ]
+}

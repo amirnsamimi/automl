@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "routes": {
+    "inventory": "/cars",
+    "detail": "/cars/{slug}",
+    "compare": "/compare?ids={uuid1},{uuid2},{uuid3}",
+    "read_api": "/api/cars"
+  },
+  "example_requested": "/cars?brand=پژو&max=900",
+  "example_populated": "/cars?brand=بی‌ام‌و&min=3000&max=9000&yearMin=1398&yearMax=1403&sort=price_asc&page=1&limit=10",
+  "query_parameters": {
+    "brand": {
+      "type": "single Unicode string",
+      "meaning": "normalized exact match to brands.name_fa, alias lookup allowed; empty = all"
+    },
+    "min": {
+      "type": "nonnegative decimal string, <=6 decimal places",
+      "unit": "million toman",
+      "inclusive": true
+    },
+    "max": {
+      "type": "nonnegative decimal string, <=6 decimal places",
+      "unit": "million toman",
+      "inclusive": true
+    },
+    "yearMin": {
+      "type": "integer",
+      "calendar": "persian",
+      "inclusive": true
+    },
+    "yearMax": {
+      "type": "integer",
+      "calendar": "persian",
+      "inclusive": true
+    },
+    "condition": {
+      "type": "body_condition enum"
+    },
+    "payment": {
+      "type": "payment_method enum"
+    },
+    "q": {
+      "type": "bounded search string, maximum 100 characters"
+    },
+    "sort": {
+      "values": [
+        "newest",
+        "price_asc",
+        "price_desc",
+        "mileage_asc",
+        "mileage_desc"
+      ],
+      "default": "newest"
+    },
+    "page": {
+      "type": "integer >=1",
+      "default": 1
+    },
+    "limit": {
+      "values": [
+        10,
+        20,
+        50
+      ],
+      "default": 10
+    }
+  },
+  "sort_tie_breaker": "id ASC after primary sort; newest uses published_at DESC NULLS LAST, id ASC",
+  "filter_logic": "AND across dimensions; bounds inclusive; payment uses EXISTS to avoid duplicate car rows",
+  "pagination": {
+    "initial": "page=1&limit=10: results 1–10",
+    "single_auto_append": "fetch page=2&limit=10 once: append 11–20, deduplicate by id",
+    "boundary": "do not auto-fetch page 3; reveal numbered pagination after result 20",
+    "explicit_mode": "selecting page 3 replaces accumulated results with 21–30, moves focus to list heading, announces range",
+    "limit_change": "10, 20 or 50 allowed in explicit mode; reset to page 1 and remain explicit for this browsing session; UI mode is presentation state only, not a filter or cache key",
+    "direct_page_link": "a deep link with page > 1 or limit != 10 renders one ordinary page without auto-append",
+    "filter_sort_change": "reset page=1, limit=10 and append budget; abort outdated requests",
+    "back_forward": "restore query and saved list mode / loaded pages / scroll from session history state; results still governed by URL",
+    "no_more": "hide next when hasNext=false; page past last redirects to last valid page if total > 0; zero total remains page 1"
+  },
+  "url_state": {
+    "canonical": "single source of applied filters; useFilter is an application-level hook design, not an assumed third-party package",
+    "draft": "sheet edits remain local until Apply; dismiss discards edits; Reset clears all filters",
+    "normalization": "Unicode normalization, Persian/Arabic digit-to-ASCII parsing, whitespace trim, canonical parameter order, omit defaults, encode via URLSearchParams",
+    "sharing": "same normalized URL and same inventory snapshot produce same filtered and sorted results; live inventory may change",
+    "history": "push on Apply, sort, page or compare change; replace for canonicalization; do not push on every slider movement",
+    "cache": "normalized public query only; private owner data is never in shared caches"
+  },
+  "validation": "Reject unknown sort/enum, negative/invalid numbers, min > max and yearMin > yearMax with safe 400 field errors. Allowlist sort identifiers; values are parameterized. Never interpolate raw user SQL.",
+  "public_car_fields": [
+    "id",
+    "slug",
+    "listing_code",
+    "title_fa",
+    "production_year_jalali",
+    "mileage_km",
+    "price_toman",
+    "color_code",
+    "color_label_fa",
+    "condition",
+    "condition_note_fa",
+    "status",
+    "city_fa",
+    "public_seller_name",
+    "images",
+    "payment_options",
+    "specs",
+    "features"
+  ],
+  "response_metadata": [
+    "total",
+    "page",
+    "limit",
+    "hasNext"
+  ],
+  "not_public": [
+    "owner_id",
+    "owners.legal_name",
+    "owners.email",
+    "owners.phone"
+  ]
+}

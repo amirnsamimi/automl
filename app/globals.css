@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #172320;
+  --color-canvas: #f0f3f0;
+  --color-surface: #ffffff;
+  --color-muted: #61706b;
+  --color-border: #dfe5e0;
+  --color-mint: #dbede1;
+  --color-green: #256048;
+  --color-warning: #f5e8d2;
+  --color-warning-ink: #7a5216;
+  --color-danger: #f6dcdc;
+  --color-danger-ink: #8a2b2b;
+  --color-chip: #eef1ee;
+
+  --font-sans: var(--font-vazirmatn), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 22px;
+  --radius-button: 14px;
+  --radius-sheet: 28px;
+
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1200px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.7;
+    font-feature-settings: "ss01";
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.35;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  bdi[dir="ltr"],
+  .ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility tap {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+}
+
+@utility card {
+  @apply rounded-card border border-border bg-surface;
+}
+
+@utility pill {
+  @apply tap inline-flex items-center justify-center gap-2 rounded-full px-5 text-sm font-medium transition-colors duration-150;
+}
+
+@utility pill-solid {
+  @apply pill bg-ink text-surface hover:bg-ink/90;
+}
+
+@utility pill-ghost {
+  @apply pill border border-border bg-surface text-ink hover:bg-chip;
+}
+
+@utility pill-soft {
+  @apply pill bg-chip text-ink hover:bg-border;
+}
+
+@utility btn-primary {
+  @apply tap inline-flex items-center justify-center gap-2 rounded-button bg-ink px-6 py-3 font-bold text-surface transition-transform duration-[120ms] active:scale-[0.98] disabled:opacity-50;
+}
+
+@utility btn-secondary {
+  @apply tap inline-flex items-center justify-center gap-2 rounded-button bg-chip px-6 py-3 font-bold text-ink transition-transform duration-[120ms] active:scale-[0.98] disabled:opacity-50;
+}
+
+@utility chip {
+  @apply tap inline-flex shrink-0 items-center justify-center rounded-full border border-border bg-surface px-5 text-sm transition-colors duration-[160ms];
+
+  &[aria-pressed="true"],
+  &[aria-checked="true"],
+  &[aria-current="page"] {
+    @apply border-ink bg-ink text-surface;
+  }
+}
+
+@utility field {
+  @apply tap w-full rounded-button border border-transparent bg-chip px-4 text-base text-ink placeholder:text-muted focus:border-green focus:outline-none;
+
+  &[aria-invalid="true"] {
+    @apply border-danger-ink;
+  }
+}
+
+@utility meta {
+  @apply text-xs text-muted;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility skeleton {
+  @apply bg-chip;
+  animation: var(--animate-pulse);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@layer components {
+  .range-dual {
+    @apply relative h-8;
+  }
+
+  .range-dual::before {
+    content: "";
+    @apply absolute inset-x-2 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-green;
+  }
+
+  .range-dual input[type="range"] {
+    @apply pointer-events-none absolute inset-0 h-8 w-full appearance-none bg-transparent;
+  }
+
+  .range-dual input[type="range"]::-webkit-slider-thumb {
+    @apply pointer-events-auto size-6 cursor-grab appearance-none rounded-full border-[3px] border-green bg-surface;
+  }
+
+  .range-dual input[type="range"]::-moz-range-thumb {
+    @apply pointer-events-auto size-6 cursor-grab rounded-full border-[3px] border-green bg-surface;
+  }
+
+  .range-dual input[type="range"]::-moz-range-track {
+    @apply bg-transparent;
+  }
+}
