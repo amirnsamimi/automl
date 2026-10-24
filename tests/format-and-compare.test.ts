@@ -8,8 +8,6 @@ import { publicAssetPath } from "@/lib/images";
 const A = "2c3feb6e-fd6b-5836-9951-ddc1d674821c";
 const B = "59171696-ea43-5a36-8207-6bc0c43e013f";
 const C = "91903f7a-4251-5e73-ac38-e345f9cb764a";
-const D = "6dd0fd11-385d-5f1b-8cf6-e0a905b6ded6";
-
 describe("format", () => {
   it("renders million toman with Persian digits", () => {
     expect(formatMillionToman("4950000000")).toBe("۴٬۹۵۰");
@@ -37,14 +35,13 @@ describe("format", () => {
 });
 
 describe("parseCompareIds", () => {
-  it("accepts 2-3 distinct UUIDs", () => {
+  it("accepts exactly 2 distinct UUIDs", () => {
     expect(parseCompareIds(`${A},${B}`)).toEqual({ ok: true, ids: [A, B] });
-    expect(parseCompareIds(`${A},${B},${C}`).ok).toBe(true);
   });
 
   it("rejects too few, too many, duplicates and malformed ids", () => {
     expect(parseCompareIds(A)).toMatchObject({ ok: false, reason: "too_few" });
-    expect(parseCompareIds(`${A},${B},${C},${D}`)).toMatchObject({ ok: false, reason: "too_many" });
+    expect(parseCompareIds(`${A},${B},${C}`)).toMatchObject({ ok: false, reason: "too_many", ids: [A, B] });
     expect(parseCompareIds(`${A},${A}`)).toMatchObject({ ok: false, reason: "duplicate" });
     expect(parseCompareIds(`${A},1 OR 1=1`)).toMatchObject({ ok: false, reason: "invalid" });
     expect(parseCompareIds(undefined)).toMatchObject({ ok: false, reason: "missing" });

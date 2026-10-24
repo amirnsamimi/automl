@@ -12,7 +12,7 @@ import { STATUS_LABELS } from "@/lib/labels";
 
 export const metadata: Metadata = {
   title: "مقایسه خودروها",
-  description: "مقایسه کنار هم قیمت، کارکرد و مشخصات فنی تا سه خودرو.",
+  description: "مقایسه کنار هم قیمت، کارکرد و مشخصات فنی دو خودرو.",
 };
 
 const REASONS: Record<Exclude<CompareIdsResult, { ok: true }>["reason"], string> = {

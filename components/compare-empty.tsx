@@ -15,7 +15,7 @@ export function CompareEmpty({ message, suggestedIds }: { message: string; sugge
         <CompareIcon size={26} />
       </span>
       <p className="text-lg font-bold">{message}</p>
-      <p className="max-w-sm text-sm text-muted">از فهرست خودروها، گزینه «مقایسه» را روی دو یا سه خودرو فعال کنید.</p>
+      <p className="max-w-sm text-sm text-muted">از فهرست خودروها، گزینه «مقایسه» را روی دو خودرو فعال کنید.</p>
       <div className="flex flex-wrap justify-center gap-3">
         {resumable && (
           <Link href={`/compare?ids=${stored.join(",")}`} className="pill-solid">

@@ -85,7 +85,7 @@ export function CompareTable({ cars, rows }: { cars: CompareCarHeader[]; rows: C
 
       <div className="relative">
         <div className="overflow-x-auto overscroll-x-contain pb-2" tabIndex={0} role="region" aria-label="جدول مقایسه، برای دیدن ستون‌ها افقی پیمایش کنید">
-          <table className={`w-full border-separate border-spacing-x-3 border-spacing-y-0 ${cols === 3 ? "min-w-[540px] md:min-w-0" : ""}`}>
+          <table className="w-full border-separate border-spacing-x-3 border-spacing-y-0">
             <caption className="sr-only">مقایسه {faDigits(cols)} خودرو</caption>
             <thead className="sticky top-0 z-10">
               <tr>
@@ -93,7 +93,7 @@ export function CompareTable({ cars, rows }: { cars: CompareCarHeader[]; rows: C
                   ویژگی
                 </th>
                 {cars.map((car) => (
-                  <th key={car.id} scope="col" data-compare-col className="w-1/3 bg-canvas pb-3 align-top font-normal">
+                  <th key={car.id} scope="col" data-compare-col className="w-1/2 bg-canvas pb-3 align-top font-normal">
                     <div className="card relative flex flex-col gap-2 p-3 text-start">
                       <button
                         type="button"
@@ -135,9 +135,6 @@ export function CompareTable({ cars, rows }: { cars: CompareCarHeader[]; rows: C
             ))}
           </table>
         </div>
-        {cols === 3 && (
-          <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 end-0 w-8 bg-gradient-to-l from-canvas to-transparent md:hidden" />
-        )}
       </div>
 
       {visible.length === 0 && <p className="text-center text-muted">تفاوتی میان این خودروها ثبت نشده است.</p>}
@@ -146,7 +143,7 @@ export function CompareTable({ cars, rows }: { cars: CompareCarHeader[]; rows: C
 
       {cols < MAX_COMPARE && (
         <Link href="/cars" className="btn-primary w-full">
-          افزودن خودروی {cols === 2 ? "سوم" : "دیگر"}
+          افزودن خودروی دیگر
         </Link>
       )}
     </div>
