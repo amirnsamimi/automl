@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ShowroomPage({ searchParams }: PageProps<"/showroom">) {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 pb-16 pt-6 lg:pt-10">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 pb-16 pt-6 lg:pt-10">
       <h1 className="text-3xl font-black lg:text-4xl">نمایشگاه Auto ML</h1>
       <Suspense fallback={null}>
         <ListingReference searchParams={searchParams} />

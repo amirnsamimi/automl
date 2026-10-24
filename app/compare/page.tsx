@@ -25,7 +25,7 @@ const REASONS: Record<Exclude<CompareIdsResult, { ok: true }>["reason"], string>
 
 export default function ComparePage({ searchParams }: PageProps<"/compare">) {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-16 pt-6 lg:px-8 lg:pt-10">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pb-16 pt-6 lg:px-8 lg:pt-10">
       <header className="flex flex-col gap-2">
         <h1 className="text-3xl font-black lg:text-4xl">کنار هم، روشن‌تر انتخاب کنید.</h1>
       </header>

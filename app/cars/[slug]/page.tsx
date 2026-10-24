@@ -54,7 +54,7 @@ async function CarDetailView({ params }: Pick<PageProps<"/cars/[slug]">, "params
   ];
 
   return (
-    <article className="mx-auto flex max-w-7xl flex-col gap-6 px-4 pb-40 pt-5 lg:gap-8 lg:px-8 lg:pb-12 lg:pt-8">
+    <article className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 pb-40 pt-5 lg:gap-8 lg:px-8 lg:pb-12 lg:pt-8">
       <nav aria-label="مسیر" className="flex items-center gap-3 text-sm text-muted">
         <Link href="/cars" className="tap grid size-12 place-items-center rounded-full border border-border bg-surface text-ink lg:hidden" aria-label="بازگشت به خودروها">
           <BackIcon />
@@ -228,7 +228,7 @@ function SpecItem({ label, value, unit, unitLtr }: { label: string; value: strin
 
 function DetailSkeleton() {
   return (
-    <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 pt-8 lg:px-8" aria-busy="true">
+    <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 pt-8 lg:px-8" aria-busy="true">
       <div className="skeleton h-10 w-64 rounded" />
       <div className="grid gap-8 lg:grid-cols-[1fr_400px]">
         <div className="skeleton aspect-[3/2] rounded-card" />

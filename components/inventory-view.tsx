@@ -42,7 +42,7 @@ export function InventoryView({ filters, brands, result, errors, canonicalHref }
   const activeCount = activeFilterCount(filters);
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[320px_1fr] lg:px-8">
+    <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 lg:grid-cols-[320px_1fr] lg:px-8">
       <aside className="hidden lg:block" aria-label="فیلترها">
         <div className="card sticky top-6 flex max-h-[calc(100dvh-3rem)] flex-col overflow-hidden">
           <div className="flex items-center justify-between px-6 pb-2 pt-6">
